@@ -1,5 +1,6 @@
 const { DataTypes } = require('sequelize')
 const { sequelize } = require('../configs/databases/init.mysql')
+const { v4: uuidv4 } = require('uuid')
 const ShowDate = require('./showdate.model')
 
 const Showtime = sequelize.define(
@@ -21,10 +22,6 @@ const Showtime = sequelize.define(
 		show_time: {
 			type: DataTypes.TIME,
 			allowNull: false,
-		},
-		available_seats: {
-			type: DataTypes.INTEGER,
-			allowNull: true,
 		},
 	},
 	{

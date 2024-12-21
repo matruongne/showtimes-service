@@ -1,5 +1,6 @@
 const { DataTypes } = require('sequelize')
 const { sequelize } = require('../configs/databases/init.mysql')
+const { v4: uuidv4 } = require('uuid')
 
 const ShowDate = sequelize.define(
 	'ShowDate',
@@ -10,10 +11,6 @@ const ShowDate = sequelize.define(
 			primaryKey: true,
 		},
 		movie_id: {
-			type: DataTypes.STRING(24),
-			allowNull: false,
-		},
-		screen_id: {
 			type: DataTypes.STRING(24),
 			allowNull: false,
 		},
